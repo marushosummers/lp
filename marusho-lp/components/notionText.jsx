@@ -1,4 +1,5 @@
 import styles from "./notion.module.css";
+import ExLink from './ExLink';
 
 export const NotionText = ({ text }) => {
   if (!text) {
@@ -11,6 +12,7 @@ export const NotionText = ({ text }) => {
     } = value;
     return (
       <span
+        key={text.content}
         className={[
           bold ? styles.bold : "",
           code ? styles.code : "",
@@ -20,7 +22,7 @@ export const NotionText = ({ text }) => {
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
       >
-        {text.link ? <a href={text.link.url} target="_blank" rel="noopener noreferrer">{text.content}</a> : text.content}
+        {text.link ? <ExLink href={text.link.url} text={text.content} />: text.content}
       </span>
     );
   });

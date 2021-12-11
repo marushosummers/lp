@@ -14,15 +14,19 @@ export const NotionRenderBlock = (block) => {
       );
     case "heading_1":
       return (
-        <h1 className="mb-8 text-5xl md:text-5xl font-bold tracking-tighter leading-tight mt-16">
-          <Text text={value.text} />
-        </h1>
+        <div className="grid grid-cols-12 items-center mt-8 mb-6">
+          <h1 className="col-start-2 col-span-10 text-5xl md:text-5xl font-bold tracking-tighter leading-tight">
+            <Text text={value.text} />
+          </h1>
+        </div>
       );
     case "heading_2":
       return (
-        <h2 className="mb-8 text-2xl md:text-2xl font-bold tracking-tighter leading-tight mt-8">
-          <Text text={value.text} />
-        </h2>
+        <div className="grid grid-cols-12 items-center mt-6 mb-4">
+          <h2 className="col-start-2 col-span-10 text-2xl md:text-2xl font-bold tracking-tighter leading-tight">
+            <Text text={value.text} />
+          </h2>
+        </div>
       );
     case "heading_3":
       return (
@@ -37,9 +41,11 @@ export const NotionRenderBlock = (block) => {
           return (<ContentsRow content={{ key: textArray[0], value: textArray[1]}} />)
       }
       return (
-        <li>
-          <Text text={value.text} />
-        </li>
+        <div className="grid grid-cols-12 items-center mt-6 mb-4">
+          <li className="col-start-2 col-span-10 text-gray-700 px-4 py-1 text-sm tabular-nums">
+            <Text text={value.text} />
+          </li>
+        </div>
       );
     case "to_do":
       return (

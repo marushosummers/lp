@@ -3,12 +3,12 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import Profile from '../components/profile'
-import Career from '../components/carrer'
-import Qualifications from '../components/qualifications'
+
 
 import { getPage, getBlocks } from "../lib/notion";
 import { NotionRenderBlock } from "../components/notionRenderBlock";
 import { Fragment } from "react";
+import FootSpace from '../components/footSpace'
 
 type Props = {
   page: any;
@@ -27,6 +27,7 @@ const Index = ({ page, blocks }: Props) => {
         </Head>
         <Container>
           <Intro />
+          <Profile />
           <div>
             <section>
               {blocks.map((block: any) => (
@@ -34,6 +35,7 @@ const Index = ({ page, blocks }: Props) => {
               ))}
             </section>
           </div>
+          <FootSpace />
         </Container>
       </Layout>
     </>
