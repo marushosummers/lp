@@ -41,7 +41,7 @@ export const Block = (block) => {
           return (<Table content={{ key: textArray[0], value: textArray[1]}} />)
       }
       return (
-        <div className="grid grid-cols-12 items-center mt-6 mb-4">
+        <div className="grid grid-cols-12 items-center">
           <li className="col-start-2 col-span-10 text-gray-700 px-4 py-1 text-sm tabular-nums">
             <Text text={value.text} />
           </li>
@@ -63,7 +63,7 @@ export const Block = (block) => {
             <Text text={value.text} />
           </summary>
           {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            <Fragment key={block.id}>{Block(block)}</Fragment>
           ))}
         </details>
       );
