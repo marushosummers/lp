@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@notionhq/client": "^0.4.9",
+    "@types/gtag.js": "^0.0.8",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
