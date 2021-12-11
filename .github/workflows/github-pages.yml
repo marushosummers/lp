@@ -1,0 +1,34 @@
+name: deploy to github pages
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: install
+        working-directory: marusho-lp
+        run: yarn install
+      - name: build
+        working-directory: marusho-lp
+        env:
+          NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
+          NOTION_PAGE_ID: ${{secrets.NOTION_PAGE_ID}}
+        run: |
+          yarn production-build
+          touch out/.nojekyll
+      - name: add CNAME
+        working-directory: marusho-lp
+        run: cp ./CNAME ./out/
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3.6.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./marusho-lp/out
+          cname: marusho.io

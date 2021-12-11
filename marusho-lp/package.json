@@ -4,6 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "production-build": "GENERATE_SOURCEMAP=false next build && next export",
     "typecheck": "tsc"
   },
   "dependencies": {
