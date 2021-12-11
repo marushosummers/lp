@@ -1,7 +1,7 @@
 import styles from "./notion.module.css";
-import ExLink from './ExLink';
+import ExLink from '../ExLink';
 
-export const NotionText = ({ text }) => {
+export const Text = ({ text }) => {
   if (!text) {
     return null;
   }

@@ -1,7 +1,7 @@
-import { NotionText as Text} from "./notionText";
-import ContentsRow from "./contentsRow";
+import { Text} from "./Text";
+import Table from "../table";
 
-export const NotionRenderBlock = (block) => {
+export const Block = (block) => {
   const { type, id } = block;
   const value = block[type];
 
@@ -38,7 +38,7 @@ export const NotionRenderBlock = (block) => {
     case "numbered_list_item":
       const textArray = value.text.map(item => item.text.content.split('|'))[0];
       if (textArray.length === 2) {
-          return (<ContentsRow content={{ key: textArray[0], value: textArray[1]}} />)
+          return (<Table content={{ key: textArray[0], value: textArray[1]}} />)
       }
       return (
         <div className="grid grid-cols-12 items-center mt-6 mb-4">

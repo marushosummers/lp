@@ -5,7 +5,7 @@ type Props = {
   content: Content
 }
 
-const ContentsRow = ({ content }: Props) => {
+const Table = ({ content }: Props) => {
   return (
     <div className="grid grid-cols-4 items-center mb-2">
       <div className="col-span-1 text-gray-700 px-4 py-1 text-sm text-right tabular-nums">{content.key}</div>
@@ -14,4 +14,4 @@ const ContentsRow = ({ content }: Props) => {
   )
 }
 
-export default ContentsRow
+export default Table

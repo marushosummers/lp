@@ -1,14 +1,13 @@
+import Head from 'next/head'
+import { getPage, getBlocks } from "../lib/notion";
+
+import Blocks from '../components/notion/Blocks';
 import Container from '../components/container'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import Head from 'next/head'
 import Profile from '../components/profile'
-
-
-import { getPage, getBlocks } from "../lib/notion";
-import { NotionRenderBlock } from "../components/notionRenderBlock";
-import { Fragment } from "react";
 import FootSpace from '../components/footSpace'
+
 
 type Props = {
   page: any;
@@ -28,13 +27,7 @@ const Index = ({ page, blocks }: Props) => {
         <Container>
           <Intro />
           <Profile />
-          <div>
-            <section>
-              {blocks.map((block: any) => (
-                <Fragment key={block.id}>{NotionRenderBlock(block)}</Fragment>
-              ))}
-            </section>
-          </div>
+          <Blocks blocks={blocks} />
           <FootSpace />
         </Container>
       </Layout>
