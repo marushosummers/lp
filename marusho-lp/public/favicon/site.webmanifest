@@ -1,17 +1,12 @@
 {
-  "name": "Next.js",
-  "short_name": "Next.js",
+  "name": "marusho.io",
+  "short_name": "marusho.io",
   "icons": [
     {
-      "src": "/favicons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/favicons/android-chrome-144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     },
-    {
-      "src": "/favicons/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
