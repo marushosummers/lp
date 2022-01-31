@@ -2,7 +2,6 @@
 
 https://marusho.io/
 
-
 ## Requirement
 
 - [Next.js](https://nextjs.org/)
