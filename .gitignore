@@ -109,3 +109,6 @@ dist
 
 # buildFiles
 **/out/*
+
+# vscode
+.vscode
